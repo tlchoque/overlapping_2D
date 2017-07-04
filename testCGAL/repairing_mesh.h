@@ -98,8 +98,8 @@ bool erode( Delaunay &dt,vector<vector<Face>> &faceSets,deque<Vertex> &singulari
 	if(faceSets.size() != 2 ) return false;
 	int min,max;
 	bool change = false;
-	//sort_by_criteria_w(dt,faceSets,v,min,max,change);	
-	sort_by_criteria(dt, faceSets, v, min, max, change);
+	sort_by_criteria_w(dt,faceSets,v,min,max,change);	
+	//sort_by_criteria(dt, faceSets, v, min, max, change);
 
 	//if( !insert_to_erode(dt,singulsarities,faceSets,v,label,min,max,draw) ){
 	//	int newlabel = new_label_for_relabeling(dt,faceSets[max],v,label); 

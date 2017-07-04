@@ -19,7 +19,7 @@ int main(){
 
 	std::stringstream ss,original,manifold,relabeling,smoothing,manifold_histo,relabeling_histo,manifold_insertion_histo,
 		smoothing_histo,smoothing_rel,smoothing_rel_histo,manifold_volume,manifold_edge,manifold_simulated,manifold_insertion;
-	string file = "tweety";
+	string file = "tauro";
 
 	ss<<"D:/project/samples/meshes2D/"<<file<<".txt";
 	original<<file<<"/original";
@@ -46,12 +46,6 @@ int main(){
 	ifstream input2(ss.str(), std::ifstream::in);
 	input2>>(input2,dt_pre);
 	Delaunay dt_pre = dt;*/
-
-	/*double result = atan2(5, -10)- atan2(5,-5);
-	result *= 180 / PI;
-	cout<<result<<endl;
-	getchar();*/
-
 	
 	double old = dt.number_of_vertices();
 	begin_overlapping(dt);
@@ -59,9 +53,10 @@ int main(){
 	
 	repairing(dt);
 	simulated_annealing_whithout_points(dt);
+	end_overlapping(old_dt, dt, old);
 
-	drawMesh(dt);
-	getchar();
+	/*drawMesh(dt);
+	getchar();*/
 
 	/*get_inserted_points(dt,old,"tauro/manifold/new_points2",2);
 	get_inserted_points(dt,old,"tauro/manifold/new_points3",3);
@@ -72,10 +67,8 @@ int main(){
 	getchar();*/	
 
 	simliarty(old_dt, dt, 4, (manifold.str()).c_str(), "", 0);
-	simliarty(dt,old_dt,4, ( manifold.str() ).c_str(),"rep2",0);
-	
+	simliarty(dt,old_dt,4, ( manifold.str() ).c_str(),"rep2",0);	
 
-	end_overlapping(old_dt,dt,old);
 	
 	drawMesh(dt);
 	getchar();

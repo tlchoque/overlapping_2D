@@ -140,7 +140,7 @@ double criteria_w(Delaunay &dt, vector<Face> &faces, vector<Edge> &facets, Verte
 	for (unsigned int i = 0; i < faces.size(); ++i) {
 		Face f = faces[i];
 		//double w = triangle_w(dt, faces[i], facets); 
-		double w = w_face( dt, f,v,5, facets );
+		double w = w_face( dt, f,v,4, facets );
 		double area = CGAL::area(f->vertex(0)->point(), f->vertex(1)->point(), f->vertex(2)->point());
 		w_average += w * area;
 		//w_average += w;

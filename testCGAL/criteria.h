@@ -39,7 +39,7 @@ double criteria_2( Delaunay &dt,vector<Face> &faces, Vertex v){
 void sort_by_criteria( Delaunay &dt,vector<vector<Face>> &faceSets, Vertex v,int &min, int &max, bool &changeable){
 	vector<double> ratio(faceSets.size());
 	for(unsigned int i = 0; i < faceSets.size(); ++i)
-		ratio[i] = criteria_1(dt,faceSets[i],v);
+		ratio[i] = criteria_2(dt,faceSets[i],v);
 	max=0;min=1;
 	if(ratio[min] > ratio[max]){
 		max = 1;

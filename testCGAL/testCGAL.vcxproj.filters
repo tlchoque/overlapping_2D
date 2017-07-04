@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="overlapping\r2d.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="overlapping\r3d.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="overlapping\test_helpers.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="overlapping\utest.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="overlapping\v2d.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="overlapping\v3d.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="overlapping\rNd.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="overlapping\vNd.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imesh2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vtk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Segmentation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="additional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="smoothing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="movement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IOimesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalVTK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="repairing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="optimal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="outvtk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="operator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="peak_removal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="point_insertion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="verify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simulated.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="repairing_mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="criteria.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="singular_vertices.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="join.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="relabeling.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="histogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlapping\r2d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlapping\r3d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlapping\test_helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlapping\utest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlapping\v2d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlapping\v3d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlapping\rNd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="overlapping\vNd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hausdorff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="winding.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_integral.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="overlapping\Readme.md">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

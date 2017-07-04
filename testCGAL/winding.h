@@ -8,23 +8,40 @@ double wind(Vector a, Vector b) {
 	return angle2;
 }
 
-double w_point( Point p, vector<Edge> &facets) {
+double w_point( Delaunay &dt, Point p, vector<Edge> &facets, Vertex v) {
 	double total = 0;
 	for (unsigned int i = 0; i < facets.size(); ++i) {
 		Edge e = facets[i];
 		Point c_i = e.first->vertex(e.first->ccw(e.second))->point();
 		Point c_j = e.first->vertex(e.first->cw(e.second))->point();
 
+		double angle;
 		if (p == c_i || p == c_j) { 
-			continue; 
-			total += 0.5;
+			if (p == v->point()) {
+				angle = 0;
+			}
+			else
+				angle = 1.57;
 		}
-
-		Vector a = c_i - p;
-		Vector b = c_j - p;
-		double angle = wind(a, b);
+		else {
+			Vector a = c_i - p;
+			Vector b = c_j - p;
+			angle = wind(a, b);
+		}
 		total += angle;
+
+		/*vector<Point > pts;
+		pts.push_back(c_i);
+		pts.push_back(c_j);
+		pts.push_back(p);
+		cout << "angle: " << angle << endl;
+
+
+		drawMesh(dt, pts);
+		getchar();*/
+
 	}
+	//getchar();
 	//return total / (2 + PI);
 	return total;
 }
@@ -44,7 +61,7 @@ double w_face(Delaunay &dt,Face f, Vertex v, int n , vector<Edge> &facets) {
 	for ( int i = 0; i < n; ++i) {
 		for (int j = 0; j < n - i; ++j) {
 			samples[i][j] = v->point() + i*b + j*c;
-			winding[i][j] = w_point(samples[i][j], facets);
+			winding[i][j] = w_point(dt,samples[i][j], facets,v);
 
 			/*cout << "winding[i][j]: " << winding[i][j] << endl;
 			pts.push_back(samples[i][j]);
@@ -140,7 +157,7 @@ double criteria_w(Delaunay &dt, vector<Face> &faces, vector<Edge> &facets, Verte
 	for (unsigned int i = 0; i < faces.size(); ++i) {
 		Face f = faces[i];
 		//double w = triangle_w(dt, faces[i], facets); 
-		double w = w_face( dt, f,v,4, facets );
+		double w = w_face( dt, f,v,5, facets );
 		double area = CGAL::area(f->vertex(0)->point(), f->vertex(1)->point(), f->vertex(2)->point());
 		w_average += w * area;
 		//w_average += w;

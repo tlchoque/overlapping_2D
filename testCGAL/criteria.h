@@ -1,3 +1,5 @@
+
+
 double larger_edge(Delaunay &dt,vector<Face> &faces, Vertex v){
 	double max=0;
 	double squaredLength;
@@ -28,7 +30,7 @@ double criteria_1( Delaunay &dt,vector<Face> &faces, Vertex v){
 }
 
 double criteria_2( Delaunay &dt,vector<Face> &faces, Vertex v){
-	//return 1/larger_edge(dt,faces);
+	//return 1/larger_edge(dt,faces,v);
 	return 1/area_face_set(faces);
 	//return larger_edge(dt,faces);
 }

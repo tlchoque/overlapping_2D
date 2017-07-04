@@ -46,7 +46,6 @@ double w_face(Delaunay &dt,Face f, Vertex v, int n , vector<Edge> &facets) {
 			samples[i][j] = v->point() + i*b + j*c;
 			winding[i][j] = w_point(samples[i][j], facets);
 
-
 			/*cout << "winding[i][j]: " << winding[i][j] << endl;
 			pts.push_back(samples[i][j]);
 			cout << samples[i][j] << endl;
@@ -77,7 +76,6 @@ double w_face(Delaunay &dt,Face f, Vertex v, int n , vector<Edge> &facets) {
 		}
 	}	
 	//cout << "total: " << total << endl;
-
 	return total/ ((n - 1)*(n - 1) * 3);
 }
 
@@ -98,7 +96,6 @@ vector<Edge> extract_facets(vector<vector<Face>> &faceSets,Vertex v) {
 	}
 	return facets;
 }
-
 
 double triangle_w(Delaunay &dt,Face f, vector<Edge> &facets){
 	Point p = CGAL::centroid(f->vertex(0)->point(), f->vertex(1)->point(), f->vertex(2)->point());
@@ -141,20 +138,44 @@ double triangle_w(Delaunay &dt,Face f, vector<Edge> &facets){
 double criteria_w(Delaunay &dt, vector<Face> &faces, vector<Edge> &facets, Vertex v ) {
 	double w_average = 0;
 	for (unsigned int i = 0; i < faces.size(); ++i) {
+		Face f = faces[i];
 		//double w = triangle_w(dt, faces[i], facets); 
-		double w = w_face( dt, faces[i],v,5, facets );
-		w_average += w;
+		double w = w_face( dt, f,v,5, facets );
+		double area = CGAL::area(f->vertex(0)->point(), f->vertex(1)->point(), f->vertex(2)->point());
+		w_average += w * area;
+		//w_average += w;
+
+		/*vector<Point> pts;
+		pts.push_back( f->vertex(0)->point() );
+		pts.push_back( f->vertex(1)->point());
+		pts.push_back( f->vertex(2)->point());
+		cout << "w face and w_average: " << w <<" * "<<w_average<< endl;
+		drawMesh(dt, pts);
+		getchar();*/
 	}
-	return w_average / faces.size();
-	//return 1/w_average;
+	/*vector<Point> pts;
+	pts.push_back(faces[0]->vertex(0)->point() );
+	pts.push_back(faces[0]->vertex(1)->point());
+	pts.push_back(faces[0]->vertex(2)->point());
+	cout << "value w averge: " << w_average << endl;
+	drawMesh(dt, pts);
+	getchar();*/
+
+	//w_average *=  10;
+
+	//return w_average / faces.size();
+
+	//return faces.size() / w_average;
+	return 1/w_average;
 }
 
 void sort_by_criteria_w(Delaunay &dt, vector<vector<Face>> &faceSets, Vertex v, int &min, int &max, bool &changeable) {
 	vector<Edge> facets = extract_facets(faceSets, v);
-
 	vector<double> ratio(faceSets.size());
-	for (unsigned int i = 0; i < faceSets.size(); ++i)
-		ratio[i] = criteria_w(dt, faceSets[i], facets,v);
+	for (unsigned int i = 0; i < faceSets.size(); ++i) {
+		ratio[i] = criteria_w(dt, faceSets[i], facets, v);
+		//cout << "ratio: " << ratio[i] << endl;
+	}
 	max = 0; min = 1;
 	if (ratio[min] > ratio[max]) {
 		max = 1;

@@ -173,7 +173,7 @@ void drawMesh(Delaunay & dt, bool sa){
 }
 
 void drawMesh(Delaunay & dt, vector<Point> &vertices,bool sa){
-	actor1->GetProperty()->SetOpacity(1);
+	actor1->GetProperty()->SetOpacity(0.5);
 	Vertex v;
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	int k=0;

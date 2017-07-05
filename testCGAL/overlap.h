@@ -202,5 +202,5 @@ void end_overlapping(Delaunay &dt_old, Delaunay &dt_new, double num_vertices){
 	double difference = total - overlapping;
 	cout<<"total area: "<<total<<endl;
 	cout<<"partial area: "<<difference<<endl;
-	cout<<"ratio: "<<difference/total<<endl;
+	cout<<"RATIO: "<<difference/total<<endl<<endl;
 }

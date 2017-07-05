@@ -105,7 +105,6 @@ void simliarty(Delaunay &a, Delaunay &b,double sampling, const char* filename,st
 		int s_index = v->info().m_index;
 		int t_index;
 
-
 		for(double j =  1; j < sampling + 1; ++j){//point created
 			if( j == sampling) {
 				t_index = w->info().m_index;
@@ -141,7 +140,7 @@ void simliarty(Delaunay &a, Delaunay &b,double sampling, const char* filename,st
 	cout<<"max: "<<max_H<<endl;
 	cout<<"RMS: "<<RMS<<endl;
 	cout<<"diag max: "<<max_H/diag<<endl;
-	cout<<"diag RMS: "<<RMS/diag<<endl;
+	cout<<"DIAG RMS: "<<RMS/diag<<endl;
 
 	if(save){
 		std::ofstream os;

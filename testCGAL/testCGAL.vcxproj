@@ -172,9 +172,6 @@
     <ClInclude Include="vtk.h" />
     <ClInclude Include="winding.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="overlapping\Readme.md" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

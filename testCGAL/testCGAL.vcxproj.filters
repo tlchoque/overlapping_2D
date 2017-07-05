@@ -153,9 +153,4 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="overlapping\Readme.md">
-      <Filter>Header Files</Filter>
-    </None>
-  </ItemGroup>
 </Project>

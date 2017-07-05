@@ -19,7 +19,7 @@ int main(){
 
 	std::stringstream ss,original,manifold,relabeling,smoothing,manifold_histo,relabeling_histo,manifold_insertion_histo,
 		smoothing_histo,smoothing_rel,smoothing_rel_histo,manifold_volume,manifold_edge,manifold_simulated,manifold_insertion;
-	string file = "tauro";
+	string file = "titicaca";
 
 	ss<<"D:/project/samples/meshes2D/"<<file<<".txt";
 	original<<file<<"/original";
@@ -42,14 +42,13 @@ int main(){
 	ifstream input(ss.str(), std::ifstream::in);
 	input>>(input,dt);	
 
-	/*Delaunay dt_pre;
-	ifstream input2(ss.str(), std::ifstream::in);
-	input2>>(input2,dt_pre);
-	Delaunay dt_pre = dt;*/
-	
 	double old = dt.number_of_vertices();
-	begin_overlapping(dt);
-	Delaunay old_dt = dt;
+
+	Delaunay old_dt;
+	ifstream input2(ss.str(), std::ifstream::in);
+	input2>>(input2, old_dt);	
+	
+	//Delaunay old_dt = dt;
 	
 	repairing(dt);
 	simulated_annealing_whithout_points(dt);
